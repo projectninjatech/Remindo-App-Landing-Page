@@ -1,103 +1,125 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Head from 'next/head';
+import React, { useState } from 'react';
+import { BarChart3, ListChecks, CalendarPlus, Search, Smartphone, Home, LayoutDashboard, Trash2, FilePlus, Mail } from 'lucide-react';
+
+// Import components
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import FeaturesSection from './components/FeaturesSection';
+import AppShowcaseSection from './components/AppShowcaseSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import CallToActionSection from './components/CallToActionSection';
+import Footer from './components/Footer';
+
+export default function LandingPage() {
+  const appName = "Remindo";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#home", label: "Home", icon: <Home size={18} /> },
+    { href: "#features", label: "Features", icon: <ListChecks size={18} /> },
+    { href: "#app-showcase", label: "Showcase", icon: <Smartphone size={18} /> },
+    { href: "/contact-us", label: "Contact", icon: <Mail size={18} /> },
+  ];
+
+  const featuresData = [
+    {
+      icon: <CalendarPlus size={32} />,
+      title: "Easy Reminder Creation",
+      description: "Quickly create and schedule reminders for all your important tasks and events. Our intuitive interface makes it a breeze.",
+    },
+    {
+      icon: <ListChecks size={32} />,
+      title: "Task Management",
+      description: "Organize your day with a clear list of pending and completed tasks. Filter, sort, and prioritize with ease.",
+    },
+    {
+      icon: <BarChart3 size={32} />,
+      title: "Monthly Statistics",
+      description: "Visualize your productivity with insightful monthly statistics on your task completion. Track your progress and stay motivated.",
+    },
+    {
+      icon: <Search size={32} />,
+      title: "Search & Categorize",
+      description: "Easily find tasks using powerful search and organize them with custom categories for better clarity and focus.",
+    },
+  ];
+
+  const screenshotFeaturesData = [
+    {
+      imageSrc: "/assets/1.png",
+      imageAlt: "Remindo App Home Screen - Dashboard Overview",
+      title: "Dashboard Overview",
+      description: "Get a quick glance at your day with today's events, completed tasks, and pending items. The intuitive dashboard, featuring clear visual indicators, helps you stay on top of your schedule effortlessly and prioritize what matters most.",
+      icon: <LayoutDashboard size={28} />,
+    },
+    {
+      imageSrc: "/assets/2.png",
+      imageAlt: "Remindo App Task List & Search - Smart Management",
+      title: "Smart Task Management",
+      description: "View your upcoming tasks in a neatly organized list, search for specific reminders with instant results, and manage your to-do list with ease. Our clean interface, coupled with powerful filtering, makes task tracking simple and efficient.",
+      icon: <ListChecks size={28} />,
+      reverse: true,
+    },
+{
+      imageSrc: "/assets/3.png",
+      imageAlt: "Remindo App Deleting Tasks - Simple Deletion",
+      title: "Simple Deletion",
+      description: "Easily delete any unwanted tasks with a quick, intuitive swipe. Remindo makes managing your reminders straightforward, ensuring you can clear your list effortlessly.",
+      icon: <Trash2 size={28} />, // Changed to Trash2 icon for deletion
+    },
+    {
+      imageSrc: "/assets/4.png",
+      imageAlt: "Remindo App Create Reminder Screen - Flexible Creation",
+      title: "Flexible Reminder Creation",
+      description: "Set detailed reminders with specific dates, times, and customizable categories. Whether it's for personal errands, study sessions, or work deadlines, Remindo adapts to your unique needs, offering unparalleled flexibility.",
+      icon: <FilePlus size={28} />,
+      reverse: true,
+    },
+  ];
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Head>
+        <title>{appName} - Your Personal Reminder Assistant</title>
+        <meta name="description" content={`Download ${appName} today and never miss an important task or event again!`} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 text-gray-800 font-sans">
+        <Navbar
+          appName={appName}
+          navLinks={navLinks}
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
+
+        <HeroSection appName={appName} />
+
+        <FeaturesSection appName={appName} features={featuresData} />
+
+        <AppShowcaseSection appName={appName} screenshotFeaturesData={screenshotFeaturesData} />
+
+        <HowItWorksSection appName={appName} />
+
+        <CallToActionSection appName={appName} />
+
+        <Footer appName={appName} navLinks={navLinks} />
+      </div>
+      <style jsx global>{`
+        .animate-pulse-slow {
+          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .animate-pulse-slower {
+          animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.1; transform: scale(1.05); }
+        }
+      `}</style>
+    </>
   );
 }
