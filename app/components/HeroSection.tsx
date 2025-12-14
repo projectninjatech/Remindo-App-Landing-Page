@@ -24,7 +24,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ appName }) => {
             Focus on what matters, we'll handle the reminders.
           </p>
           <div className="flex justify-center items-center">
-            <a href="#cta" className="bg-black hover:bg-gray-800 text-white font-semibold py-4 px-10 rounded-xl text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3">
+            <a href="https://apps.apple.com/us/app/remindo-task-water-reminder/id6746641151" className="bg-black hover:bg-gray-800 text-white font-semibold py-4 px-10 rounded-xl text-lg sm:text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3">
               <Apple size={30} />
               <span>Get on Apple Store</span>
             </a>

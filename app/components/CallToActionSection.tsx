@@ -1,5 +1,6 @@
 import React from 'react';
 import { DownloadCloud, Smartphone } from 'lucide-react';
+import Link from 'next/link';
 
 interface CallToActionSectionProps {
   appName: string;
@@ -19,7 +20,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({ appName }) =>
         </p>
         <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-5 px-12 rounded-xl text-xl sm:text-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 mx-auto">
           <DownloadCloud size={28} />
-          <span>Get {appName} Today</span>
+          <Link href={"https://apps.apple.com/us/app/remindo-task-water-reminder/id6746641151"}>Get {appName} Today</Link>
         </button>
       </div>
     </section>
