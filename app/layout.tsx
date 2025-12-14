@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Remindo | Task Reminder App",
   description:
     "Remindo is a simple and privacy-focused reminder app that helps you schedule tasks, set alerts, and stay organized. All your reminders are stored locally on your device — no accounts, no data collection.",
+    itunes: {
+      appId: "6746641151"
+    }
 };
 
 export default function RootLayout({
