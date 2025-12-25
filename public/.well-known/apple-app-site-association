@@ -1,17 +1,14 @@
 {
   "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "5ZKLJ5PZ6K.com.pntapps.remindo",
-        "paths": ["/", "/event/*"]
-      }
-    ]
-  },
-  "activitycontinuation": {
-    "apps": ["5ZKLJ5PZ6K.com.pntapps.remindo"]
-  },
-  "webcredentials": {
-    "apps": ["5ZKLJ5PZ6K.com.pntapps.remindo"]
-  }
+      "details": [
+           {
+             "appIDs": [ "5ZKLJ5PZ6K.com.pntapps.remindo"],
+             "components": [
+               {
+                  "/": "/event/*"
+               }
+             ]
+           }
+       ]
+   }
 }
