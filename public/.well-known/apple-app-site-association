@@ -6,6 +6,7 @@
         "appID": "5ZGN5PZ6K.com.pntapps.remindo",
         "paths": [
           "/",
+          "/event",
           "/event/*"
         ]
       }
