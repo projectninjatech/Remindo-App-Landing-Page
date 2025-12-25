@@ -3,13 +3,15 @@
     "apps": [],
     "details": [
       {
-        "appID": "5ZGN5PZ6K.com.pntapps.remindo",
-        "paths": [
-          "/",
-          "/event",
-          "/event/*"
-        ]
+        "appID": "5ZKLJ5PZ6K.com.pntapps.remindo",
+        "paths": ["/", "/event/*"]
       }
     ]
+  },
+  "activitycontinuation": {
+    "apps": ["5ZKLJ5PZ6K.com.pntapps.remindo"]
+  },
+  "webcredentials": {
+    "apps": ["5ZKLJ5PZ6K.com.pntapps.remindo"]
   }
 }
